@@ -1,26 +1,46 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
-const hre = require("hardhat");
-
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+  [signer1, signer2] = await ethers.getSigners();
 
-  const lockedAmount = hre.ethers.utils.parseEther("1");
+  const Staking = await ethers.getContractFactory('Staking', signer1);
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  const staking = await Staking.deploy({
+    value: ethers.utils.parseEther('1.0')
+  })
 
-  await lock.deployed();
+  await staking.deployed();
 
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+  console.log(`Staking contract deployed to  ${staking.address} by ${signer1.address}`);
+
+  const provider = waffle.provider;
+  let data;
+  let transaction;
+  let receipt;
+  let block;
+  let newUnlockDate;
+
+  data = { value: ethers.utils.parseEther('0.1') }
+  transaction = await staking.connect(signer2).stakeMatic(30, data);
+
+  data = { value: ethers.utils.parseEther('0.1') }
+  transaction = await staking.connect(signer2).stakeMatic(180, data);
+
+  data = { value: ethers.utils.parseEther('0.15') }
+  transaction = await staking.connect(signer2).stakeMatic(180, data);
+
+  data = { value: ethers.utils.parseEther('0.3') }
+  transaction = await staking.connect(signer2).stakeMatic(90, data);
+  receipt = await transaction.wait();
+  block = await provider.getBlock(receipt.blockNumber);
+  newUnlockDate = block.timestamp - (60 * 60 * 24 * 1000);
+  await staking.connect(signer1).changeUnlockPeriod(3, newUnlockDate);
+
+  data = { value: ethers.utils.parseEther('0.1') }
+  transaction = await staking.connect(signer2).stakeMatic(180, data);
+  receipt = await transaction.wait();
+  block = await provider.getBlock(receipt.blockNumber);
+  newUnlockDate = block.timestamp - (60 * 60 * 24 * 1000);
+  await staking.connect(signer1).changeUnlockPeriod(4, newUnlockDate);
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere
