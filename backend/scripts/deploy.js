@@ -1,45 +1,44 @@
 async function main() {
-  [signer1, signer2] = await ethers.getSigners();
 
-  const Staking = await ethers.getContractFactory('Staking', signer1);
+  const Staking = await ethers.getContractFactory('Staking');
 
   const staking = await Staking.deploy({
-    value: ethers.utils.parseEther('1.0')
+    value: ethers.utils.parseEther('0.1')
   })
 
   await staking.deployed();
 
-  console.log(`Staking contract deployed to  ${staking.address} by ${signer1.address}`);
+  console.log(`Staking contract deployed to ${staking.address}`);
 
-  const provider = waffle.provider;
+  /*const provider = waffle.provider;
   let data;
   let transaction;
   let receipt;
   let block;
   let newUnlockDate;
 
-  data = { value: ethers.utils.parseEther('0.1') }
+  data = { value: ethers.utils.parseEther('0.01') }
   transaction = await staking.connect(signer2).stakeMatic(30, data);
 
-  data = { value: ethers.utils.parseEther('0.1') }
+  data = { value: ethers.utils.parseEther('0.01') }
   transaction = await staking.connect(signer2).stakeMatic(180, data);
 
-  data = { value: ethers.utils.parseEther('0.15') }
+  data = { value: ethers.utils.parseEther('0.015') }
   transaction = await staking.connect(signer2).stakeMatic(180, data);
 
-  data = { value: ethers.utils.parseEther('0.3') }
+  data = { value: ethers.utils.parseEther('0.03') }
   transaction = await staking.connect(signer2).stakeMatic(90, data);
   receipt = await transaction.wait();
   block = await provider.getBlock(receipt.blockNumber);
   newUnlockDate = block.timestamp - (60 * 60 * 24 * 1000);
   await staking.connect(signer1).changeUnlockPeriod(3, newUnlockDate);
 
-  data = { value: ethers.utils.parseEther('0.1') }
+  data = { value: ethers.utils.parseEther('0.01') }
   transaction = await staking.connect(signer2).stakeMatic(180, data);
   receipt = await transaction.wait();
   block = await provider.getBlock(receipt.blockNumber);
   newUnlockDate = block.timestamp - (60 * 60 * 24 * 1000);
-  await staking.connect(signer1).changeUnlockPeriod(4, newUnlockDate);
+  await staking.connect(signer1).changeUnlockPeriod(4, newUnlockDate);*/
 
 }
 
