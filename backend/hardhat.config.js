@@ -3,7 +3,7 @@ require("dotenv").config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
-const { apiUrl, privateKey, apiKey } = process.env;
+const { API_URL, PRIVATE_KEY, API_KEY } = process.env;
 
 module.exports = {
   solidity: {
@@ -14,11 +14,11 @@ module.exports = {
   },
   networks: {
     matic: {
-      url: apiUrl,
-      accounts: [privateKey]
+      url: API_URL,
+      accounts: [PRIVATE_KEY]
     }
   },
   etherscan: {
-    apiKey: apiKey
+    apiKey: API_KEY
   }
 };
