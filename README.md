@@ -1,6 +1,8 @@
 # Stakify
 It is a Staking application built upon Polygon network.
 
+// Token contract address = 0x12163B070B97f06F5061D93164D960bbFCfdf965
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
