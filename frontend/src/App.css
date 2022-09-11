@@ -1,38 +1,225 @@
 .App {
+  background-color: #05062d;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+}
+
+.appBody {
+  height: 100%;
+  margin-top: 80px;
+}
+
+/* Navbar */
+.navButton {
+  float: left;
+  margin-left: 24px;
+  padding: 5px;
+  color: #f1f1f3;
+  font-size: 24px;
+}
+
+.connectButton {
+  float: right;
+  margin-right: 24px;
+  background-color: #1168f1;
+  border-radius: 4px;
+  padding: 5px 15px;
+  color: #f1f1f3;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.connectButton:hover {
+  background-color: #f90;
+}
+
+.navBar {
+  padding-top: 18px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(17, 104, 241, 0.08);
+}
+
+
+/* Market */
+.marketContainer {
+  backdrop-filter: blur(20px);
+  background: linear-gradient(135deg, #101040, hsla(0, 0%, 100%, 0));
+  border: 1px solid hsla(0, 0%, 100%, .18);
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 37%);
+  width: 70vw;
+  height: 170px;
+  margin: 0 auto;
+  top: 50%;
+  border-radius: 24px;
+  padding: 8px;
+}
+
+.subContainer {
+  margin-bottom: 20px;
+}
+
+.marketOption {
   display: flex;
-  flex-direction: column;
+  margin-left: 22px;
+}
+
+.optionData {
+  margin-left: 10px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.optionPercent {
+  display: block;
+  font-size: 24px;
+  font-weight: 1000;
+  color: #f90;
+}
+
+.logoImg {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 100px;
+  margin-bottom: 14px;
+  margin-right: 14px;
+  width: 28px;
+  height: 28px;
+}
+
+.marketHeader {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.hoverButton:hover {
+  background: #f90;
+  cursor: pointer;
+}
+
+.hoverButton:active {
+  /* box-shadow: 0 0 0 white; */
+  box-shadow: inset;
+}
+
+
+/* Assets */
+.assetContainer {
+  backdrop-filter: blur(20px);
+  background: linear-gradient(135deg, #101040, hsla(0, 0%, 100%, 0));
+  border: 1px solid hsla(0, 0%, 100%, .18);
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 37%);
+  width: 70vw;
+  margin: 0 auto;
+  top: 50%;
+  min-height: 225px;
+  border-radius: 24px;
+  padding: 6px;
+  padding: 8px;
+  margin-top: 50px;
+  /* space between sections */
+  color: #fff;
+  font-weight: 500;
+}
+
+.columnHeaders {
+  font-weight: 800;
+  color: #f90;
+}
+
+.stakedLogoImg {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 100px;
+  margin-bottom: 14px;
+  margin-right: 14px;
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Glyphs */
+.glyphContainer {
+  background-color: #fff;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+}
+
+.glyph {
+  font-size: 34px;
+}
+
+
+/* Stake Modal */
+.modal-class {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: -400px;
+  right: 0px;
+  bottom: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(86, 90, 105);
 }
 
-.App-link {
-  color: #61dafb;
+.modal-content {
+  background-color: #fff;
+  width: 300px !important;
+  padding: 0px 15px;
+  background-color: rgb(237, 238, 242) !important;
+  border: 1px solid rgb(206, 208, 217) !important;
+  border-radius: 12px !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fieldContainer {
+  padding-left: 0px !important;
+}
+
+.inputField {
+  padding-left: 10px;
+  border-radius: 36px;
+  border: 1px solid #65cdee;
+  height: 2rem;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.inputFieldContainer {
+  padding-left: 0px !important;
+  padding-top: 14px;
+}
+
+.orangeButton {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  font-size: 24px;
+  color: #fff;
+  border-radius: 20px;
+  background-color: #dd2f81;
+  cursor: pointer
+}
+
+.orangeMiniButton {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  font-size: 12px;
+  color: #000;
+  border-radius: 20px;
+  background-color: #fff;
+  cursor: pointer
+}
+
+.orangeMiniButton:hover {
+  color: #fff;
+  background-color: #f90;
+  ;
+}
+
+.stakingTerms {
+  color: blue;
 }
