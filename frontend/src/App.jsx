@@ -11,7 +11,6 @@ const ContractAddress = '0x12163B070B97f06F5061D93164D960bbFCfdf965';
 
 function App() {
 
-
   // frontend states
   const [provider, setProvider] = useState(undefined);
   const [account, setAccount] = useState(undefined);
@@ -235,7 +234,7 @@ function App() {
       </div>
 
       {stakeModal && (
-        <StakeModal onClose={() => setStakeModal(false)} stakingLength={stakingLength} stakingPercent={stakingPercent} setAmount={setAmount} stakeMatic={stakeMatic} />
+        <StakeModal onClose={() => setStakeModal(false)} stakingLength={stakingLength} stakingPercent={stakingPercent} amount={amount} setAmount={setAmount} stakeMatic={stakeMatic} />
       )}
 
     </div>

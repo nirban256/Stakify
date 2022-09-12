@@ -1,6 +1,6 @@
 import React from 'react'
 
-const StakeModal = ({ onClose, stakingLength, stakingPercent, setAmount, stakeMatic }) => {
+const StakeModal = ({ onClose, stakingLength, stakingPercent, amount, setAmount, stakeMatic }) => {
     return (
         <>
             <div className='modal-class' onClick={onClose}>
@@ -25,7 +25,7 @@ const StakeModal = ({ onClose, stakingLength, stakingPercent, setAmount, stakeMa
                         </div>
 
                         <div className="row">
-                            <div onClick={() => stakeMatic} className="orangeButton">
+                            <div onClick={() => stakeMatic(amount)} className="orangeButton">
                                 Stake Matic
                             </div>
                         </div>
