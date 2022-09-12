@@ -1,7 +1,9 @@
 # Stakify
 It is a Staking application built upon Binance Smart Chain network.
 
-// Token contract address = 0x12163B070B97f06F5061D93164D960bbFCfdf965
+Live site - [Stakify](https://tpzuf9bgvjpl.usemoralis.com/)
+
+Staking contract address = 0x12163B070B97f06F5061D93164D960bbFCfdf965
 
 # Getting Started with Create React App
 
