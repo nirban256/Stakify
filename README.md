@@ -1,5 +1,5 @@
 # Stakify
-It is a Staking application built upon Polygon network.
+It is a Staking application built upon Binance Smart Chain network.
 
 // Token contract address = 0x12163B070B97f06F5061D93164D960bbFCfdf965
 
