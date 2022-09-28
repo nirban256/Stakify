@@ -1,7 +1,7 @@
 # Stakify
 It is a Staking application built upon Binance Smart Chain network.
 
-Live site - [Stakify](https://tpzuf9bgvjpl.usemoralis.com/)
+Live site - [Stakify](https://stakify-rose.vercel.app/)
 
 Staking contract address = 0x12163B070B97f06F5061D93164D960bbFCfdf965
 
